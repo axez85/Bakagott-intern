@@ -1,4 +1,20 @@
+*.sublime-project
+*.sublime-workspace
+*.sublime-grunt.cache
+*package-lock.json
+**/*/*.env*
+
 .sass-cache/
 *.css.map
 *.sass.map
 *.scss.map
+
+# Project
+**/*/node_modules/
+ettikett.html
+output.*
+output.min.*
+style.min.*
+**/output.*
+**/output.min.*
+
