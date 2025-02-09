@@ -19,6 +19,23 @@ router.put("/test/:id", async (req, res) => {
   }
 });
 
+// Addera test i databasen
+router.post("/test/", async (req, res) => {
+  const { description} = req.body;
+
+  try {
+    const result = await pool.query(
+      "INSERT INTO test (description) VALUES ($1) RETURNING *",
+      [description]
+    );
+    res.json(result.rows[0]);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Serverfel" });
+  }
+});
+
+
 module.exports = router;
 
 
