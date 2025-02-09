@@ -1,6 +1,11 @@
+//require("dotenv").config();
+
 const express = require("express")
 const app = express()
 const cors = require("cors")
+const pool = require("./db.js")
+
+//const { Pool } = require("pg");
 
 //middleware
 app.use(cors())
