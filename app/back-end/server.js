@@ -1,11 +1,11 @@
-//require("dotenv").config();
+require("dotenv").config()
 
 const express = require("express")
-const app = express()
 const cors = require("cors")
 const pool = require("./db.js")
 
-//const { Pool } = require("pg");
+const app = express()
+const PORT = process.env.PORT || 4343
 
 //middleware
 app.use(cors())
@@ -19,8 +19,8 @@ app.use("/labels", labelRoutes)
 // En grundläggande route
 app.get("/", (req, res) => {
     res.send("Välkommen till API:et!");
- });
+ })
 
-app.listen(5000, ()=> {
-    console.log("Server has started on port 5000")
-}) 
+app.listen(PORT, () => {
+  console.log(`Server is running: http://localhost:${PORT}`)
+})
