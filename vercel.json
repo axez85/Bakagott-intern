@@ -1,0 +1,12 @@
+{
+    "version": 2,
+    "projects": {
+      "frontend": {
+        "rootDirectory": "frontend"
+      },
+      "backend": {
+        "rootDirectory": "/app/back-end/"
+      }
+    }
+  }
+  
