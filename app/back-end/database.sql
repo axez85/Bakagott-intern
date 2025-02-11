@@ -1,7 +1,10 @@
-CREATE TABLE IF NOT EXISTS labels (
+CREATE TABLE IF NOT EXISTS label (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    name TEXT NOT NULL,
-    data TEXT NOT NULL,
+    productName TEXT NOT NULL,
+    productSubtitle TEXT NOT NULL,
+    productAmount INT NULL,
+    productWeight INT NULL,
+    barcode TEXT NOT NULL,
     created_at TIMESTAMP DEFAULT NOW()
 );
 
@@ -14,3 +17,9 @@ CREATE TABLE IF NOT EXISTS test (
 INSERT INTO test (description)
 VALUES 
 ('Nu testar vi den')
+;
+
+INSERT INTO label (productName, productSubtitle, productAmount, productWeight, barcode)
+VALUES 
+('Pizzabotten', ' - Fryst', 4, 200, 'EAN13,7350005720056')
+;
